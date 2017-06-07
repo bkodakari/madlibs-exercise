@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Game Time</title>
+  </head>
+  <body>
+      Hi {{person}}! Let's play!
+      <form action="/madlib">
+      Please fill out the form for a magical surprise!<br>
+<!--       Name<input type="text" name="person"><br> -->
+      <input type="hidden" name="person" value={{person}}>
+      Noun<input type="text" name="noun"><br>
+      Adjective<input type="text" name="adjective"><br>
+      Color<select name="color">
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+      </select>
+      <br>
+      Choose 3<br>
+      <input type="checkbox" name="verb" value="run">Run
+      <input type="checkbox" name="verb" value="skip">Skip
+      <input type="checkbox" name="verb" value="jump">Jump
+      <input type="checkbox" name="verb" value="fly">Fly
+      <input type="checkbox" name="verb" value="prance">Prance
+      <br>
+      <input type="submit">
+    </form>
+</body>
+</html>
