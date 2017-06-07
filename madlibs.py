@@ -63,16 +63,15 @@ def show_madlib():
     noun = request.args.get('noun')
     adjective = request.args.get('adjective')
     color = request.args.get('color')
-    verb = []
+    selected = request.args.getlist('verb')
 
-    for checkbox in 'verb1', 'verb2', 'verb3', 'verb4', 'verb5':
-        value = request.args.get(checkbox)
-        if value:
-            verb.append(value)
+    verbs = []
 
-    verb1 = verb[0]
-    verb2 = verb[1]
-    verb3 = verb[2]
+    for i in range(3):
+        try:
+            verbs[i] = selected[i]
+        except IndexError:
+            verbs[i] = 'running'
 
     return render_template("madlib.html", person=person, noun=noun, adjective=adjective, color=color, verb1=verb1, verb2=verb2, verb3=verb3)
 
